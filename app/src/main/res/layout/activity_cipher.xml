@@ -17,8 +17,8 @@
         android:layout_below="@id/encode_button"
         android:text="でコードボタン"/>
 
-    <VideoView
-        android:id="@+id/video_view"
+    <SurfaceView
+        android:id="@+id/video_surface"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/decode_button"/>
