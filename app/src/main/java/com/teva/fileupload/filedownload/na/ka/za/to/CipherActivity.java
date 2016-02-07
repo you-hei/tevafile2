@@ -138,9 +138,11 @@ public class CipherActivity extends AppCompatActivity {
                 fos.write(cipher.getIV());
                 byte[] a = new byte[8];
                 int i = fis.read(a);
-                while (i != -1) {
+                int c =0;
+                while (i != -1 && c <= 5) {
                     cos.write(a, 0, i);
                     i = fis.read(a);
+                    c++;
                 }
                 cos.flush();
             } catch (Exception e) {
@@ -187,9 +189,11 @@ public class CipherActivity extends AppCompatActivity {
 
                 fos = openFileOutput(DECODED_FILE_NAME, Context.MODE_PRIVATE);
 
-                while(i != -1) {
+                int c=0;
+                while(i != -1 && c <= 5) {
                     fos.write(readByte, 0, i);
                     i = cis.read(readByte);
+                    c++;
                 }
 
                 fos.flush();

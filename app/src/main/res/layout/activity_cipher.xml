@@ -8,13 +8,6 @@
         android:id="@+id/encode_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="encode開始ボタン"/>
-
-    <Button
-        android:id="@+id/encode_saisyo_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/encode_button"
         android:text="最初の５行だけencode開始ボタン"/>
 
     <Button
@@ -22,14 +15,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/encode_button"
-        android:text="でコードボタン"/>
-
-    <Button
-        android:id="@+id/decode_saisyo_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/encode_button"
-        android:layout_toRightOf="@id/decode_button"
         android:text="最初の５行だけでコードボタン"/>
 
     <SurfaceView
