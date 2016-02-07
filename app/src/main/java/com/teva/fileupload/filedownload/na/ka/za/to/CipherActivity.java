@@ -23,6 +23,7 @@ import com.teva.fileupload.filedownload.R;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.InputStream;
 import java.security.Key;
 
 import javax.crypto.Cipher;
@@ -156,6 +157,7 @@ public class CipherActivity extends AppCompatActivity {
         }
     }
 
+    /** でコードする処理非同期の奴　内部領域に保存してそいつのUriを返すバジョーン */
     static final String DECODED_FILE_NAME="deco_file.mp4";
     public class DecodeAsync extends AsyncTask<String, Void, Uri> {
         long mStart;
@@ -177,7 +179,7 @@ public class CipherActivity extends AppCompatActivity {
                 IvParameterSpec ivspec = new IvParameterSpec(iv);
                 cipher.init(Cipher.DECRYPT_MODE, key, ivspec);
                 cis = new CipherInputStream(fis, cipher);
-                long time = mStart - System.currentTimeMillis();
+                long time = System.currentTimeMillis() - mStart;
                 Log.d(LOG_TAG, "CipherInputStreamに値が入りました。時間："+time);
 
                 byte[] readByte = new byte[8];
