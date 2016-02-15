@@ -32,11 +32,33 @@
         android:layout_toRightOf="@id/decode_button"
         android:text="最初の５行だけでコードボタン"/>
 
+    <Button
+        android:id="@+id/copyPestButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/decode_button"
+        android:text="コピペボタン"/>
+
+    <Button
+        android:id="@+id/removeHeadAndPlayMoviewButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/copyPestButton"
+        android:text="先頭のchas文字を覗いて再生する"/>
+
+    <Button
+        android:id="@+id/generateHeadPlusFile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/removeHeadAndPlayMoviewButton"
+        android:layout_below="@id/copyPestButton"
+        android:text="頭にchaschasがついたファイルを生成" />
+
     <SurfaceView
         android:id="@+id/video_surface"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/decode_button"/>
+        android:layout_below="@id/removeHeadAndPlayMoviewButton"/>
 
     <TextView
         android:id="@+id/encode_type"
