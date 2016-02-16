@@ -1,42 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <variable
+            name="clickHandler"
+            type="com.teva.fileupload.filedownload.na.ka.za.to.CipherActivityClickHandle" />
+    </data>
+<RelativeLayout
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <Button
-        android:id="@+id/encode_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="encode開始ボタン"/>
-
-    <Button
-        android:id="@+id/encode_saisyo_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/encode_button"
-        android:text="最初の５行だけencode開始ボタン"/>
-
-    <Button
-        android:id="@+id/decode_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/encode_button"
-        android:text="でコードボタン"/>
-
-    <Button
-        android:id="@+id/decode_saisyo_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/encode_button"
-        android:layout_toRightOf="@id/decode_button"
-        android:text="最初の５行だけでコードボタン"/>
-
-    <Button
         android:id="@+id/copyPestButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/decode_button"
+        android:onClick="@{clickHandler.onClickCopype}"
         android:text="コピペボタン"/>
 
     <Button
@@ -44,6 +22,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/copyPestButton"
+        android:onClick="@{clickHandler.onClickRemoveHeadPlayButton}"
         android:text="先頭のchas文字を覗いて再生する"/>
 
     <Button
@@ -52,6 +31,7 @@
         android:layout_height="wrap_content"
         android:layout_toRightOf="@id/removeHeadAndPlayMoviewButton"
         android:layout_below="@id/copyPestButton"
+        android:onClick="@{clickHandler.onClickGenerateUnko}"
         android:text="頭にchaschasがついたファイルを生成" />
 
     <SurfaceView
@@ -67,3 +47,4 @@
         android:layout_alignParentRight="true"/>
 
 </RelativeLayout>
+</layout>
