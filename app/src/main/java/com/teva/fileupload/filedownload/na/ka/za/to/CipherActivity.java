@@ -29,6 +29,7 @@ import java.io.FileOutputStream;
  * Created by nkzt on 16/02/03.
  */
 public class CipherActivity extends AppCompatActivity implements CipherActivityClickHandle {
+    static final byte bb = 5;
     static final String LOG_TAG=CipherActivity.class.getSimpleName();
     static final String ENCODE="AES/CBC/PKCS5Padding";
     static final String ENCODED_FILENAME = "/ko.shi.hi.ka.ri",
@@ -45,7 +46,7 @@ public class CipherActivity extends AppCompatActivity implements CipherActivityC
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 //        setContentView(R.layout.activity_cipher);
-        mBinding = DataBindingUtil.setContentView(this, R.layout.activity_cipher);
+        mBinding = (ActivityCipherBinding) DataBindingUtil.setContentView(this, R.layout.activity_cipher);
         mBinding.setClickHandler(this);
 
         getWindow().setFormat(PixelFormat.TRANSPARENT);
